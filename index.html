@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Easy Algebra — Beginner Friendly</title>
+
+  <!-- Google font for nicer headings -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <!-- Link to the stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Page header / hero -->
+  <header class="hero">
+    <!-- Decorative (non-copyrighted) SVG - keeps things ninja themed without using copyrighted artwork -->
+    <div class="hero-deco" aria-hidden="true">
+      <svg viewBox="0 0 200 60" preserveAspectRatio="none">
+        <path d="M0,40 Q40,0 100,30 T200,20 L200,60 L0,60 Z" fill="#ff7f11" opacity="0.12"/>
+      </svg>
+    </div>
+
+    <div class="hero-content container">
+      <h1>Easy Algebra — Start Here</h1>
+      <p class="tagline">Short, clear explanations and a 5-question quiz to practise solving basic equations.</p>
+
+      <!-- Placeholder for Naruto art: replace this src with your licensed Naruto image at images/naruto-art.jpg -->
+      <div class="hero-art">
+        <img src="images/naruto-art.jpg" alt="Your Naruto-style art goes here (replace with licensed image)" onerror="this.style.display='none'">
+        <div class="art-note">Tip: Put a Naruto-themed image at <code>images/naruto-art.jpg</code> (must be licensed).</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main content area -->
+  <main class="container">
+    <!-- Short lesson section -->
+    <section id="lesson">
+      <h2>What is algebra?</h2>
+      <!-- Short intro paragraph -->
+      <p>Algebra is a way to use letters (like x or y) to stand for numbers. We write expressions and equations to model problems and then solve them to find the unknown value.</p>
+
+      <!-- Small glossary / quick definitions -->
+      <div class="glossary">
+        <div class="card">
+          <h3>Variable</h3>
+          <p>A symbol (like x) that represents an unknown number.</p>
+        </div>
+        <div class="card">
+          <h3>Expression</h3>
+          <p>A combination of numbers, variables, and operations (e.g., 2x + 3).</p>
+        </div>
+        <div class="card">
+          <h3>Equation</h3>
+          <p>A statement that two expressions are equal (e.g., 2x + 3 = 11).</p>
+        </div>
+      </div>
+
+      <!-- Step-by-step example -->
+      <article class="example">
+        <h3>How to solve a simple equation</h3>
+        <ol>
+          <li>Start: 2x + 3 = 11</li>
+          <li>Subtract 3 from both sides: 2x = 8</li>
+          <li>Divide both sides by 2: x = 4</li>
+        </ol>
+        <p class="small">Key idea: whatever you do to one side, do to the other side to keep the equality.</p>
+      </article>
+    </section>
+
+    <!-- Interactive quiz -->
+    <section id="quiz">
+      <h2>Quick 5-question quiz</h2>
+      <p>Choose the correct answer for each question, then press Submit.</p>
+
+      <!-- Quiz form: JavaScript reads this to grade -->
+      <form id="quiz-form">
+        <!-- Question 1 -->
+        <fieldset class="question" data-index="1">
+          <legend>1) Simplify: 2x + 3x = ?</legend>
+          <label><input type="radio" name="q1" value="5x"> 5x</label>
+          <label><input type="radio" name="q1" value="6x"> 6x</label>
+          <label><input type="radio" name="q1" value="x"> x</label>
+        </fieldset>
+
+        <!-- Question 2 -->
+        <fieldset class="question" data-index="2">
+          <legend>2) Solve: x + 7 = 12</legend>
+          <label><input type="radio" name="q2" value="5"> 5</label>
+          <label><input type="radio" name="q2" value="19"> 19</label>
+          <label><input type="radio" name="q2" value="-5"> -5</label>
+        </fieldset>
+
+        <!-- Question 3 -->
+        <fieldset class="question" data-index="3">
+          <legend>3) Evaluate when x = 3: 4x - 2 = ?</legend>
+          <label><input type="radio" name="q3" value="10"> 10</label>
+          <label><input type="radio" name="q3" value="5"> 5</label>
+          <label><input type="radio" name="q3" value="12"> 12</label>
+        </fieldset>
+
+        <!-- Question 4 -->
+        <fieldset class="question" data-index="4">
+          <legend>4) Solve: 2x - 4 = 10</legend>
+          <label><input type="radio" name="q4" value="7"> 7</label>
+          <label><input type="radio" name="q4" value="3"> 3</label>
+          <label><input type="radio" name="q4" value="14"> 14</label>
+        </fieldset>
+
+        <!-- Question 5 -->
+        <fieldset class="question" data-index="5">
+          <legend>5) Solve: 3(x + 2) = 15</legend>
+          <label><input type="radio" name="q5" value="3"> 3</label>
+          <label><input type="radio" name="q5" value="5"> 5</label>
+          <label><input type="radio" name="q5" value="1"> 1</label>
+        </fieldset>
+
+        <div class="quiz-actions">
+          <button type="submit" id="submit-btn">Submit</button>
+          <button type="button" id="reset-btn">Reset</button>
+        </div>
+      </form>
+
+      <!-- Area where results and explanations will be shown -->
+      <div id="results" aria-live="polite"></div>
+    </section>
+
+    <!-- Footer with attribution / notes -->
+    <footer>
+      <p>Made for learners. Replace the art file with licensed Naruto-themed art if you have permission; do not upload copyrighted images you don't own.</p>
+    </footer>
+  </main>
+
+  <!-- Link to the JavaScript file -->
+  <script src="script.js" defer></script>
+</body>
+</html>
