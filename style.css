@@ -1,0 +1,153 @@
+/* Basic reset and fonts */
+:root{
+  --brand-orange: #ff7f11;
+  --dark: #0b0b0b;
+  --muted: #666;
+  --card-bg: #fffaf6;
+  --accent: #b22222;
+  --max-width: 1000px;
+}
+
+*{box-sizing: border-box}
+html,body{
+  height:100%;
+  margin:0;
+  font-family: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg,#fff 0%, #fff8f0 100%);
+  color:var(--dark);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Container centers content and limits width */
+.container{
+  max-width:var(--max-width);
+  margin:0 auto;
+  padding:1rem;
+}
+
+/* Hero styling with ninja-inspired orange */
+.hero{
+  background: linear-gradient(135deg, rgba(255,127,17,0.06), rgba(178,34,34,0.02));
+  padding:1.25rem 0 0.5rem;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero-content{
+  display:flex;
+  gap:1rem;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+}
+
+.hero h1{
+  margin:0 0 0.25rem;
+  font-size:clamp(1.4rem, 2.5vw, 2rem);
+  color:var(--dark);
+}
+
+.tagline{
+  margin:0 0 0.5rem;
+  color:var(--muted);
+}
+
+/* Hero art area */
+.hero-art{
+  min-width:180px;
+  text-align:center;
+}
+.hero-art img{
+  max-width:180px;
+  border-radius:8px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.08);
+  display:block;
+  margin:0 auto 0.5rem;
+}
+.art-note{
+  font-size:0.8rem;
+  color:var(--muted);
+}
+
+/* Glossary cards */
+.glossary{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap:0.75rem;
+  margin:1rem 0;
+}
+.card{
+  background:var(--card-bg);
+  border-left:6px solid var(--brand-orange);
+  padding:0.65rem;
+  border-radius:8px;
+}
+
+/* Example / lesson area */
+.example{
+  background:#fff;
+  padding:0.8rem;
+  border-radius:8px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.03);
+  margin-bottom:1rem;
+}
+.example ol { margin:0.5rem 0 0.25rem 1.25rem; }
+
+/* Quiz styling */
+#quiz .question{
+  margin:0.75rem 0;
+  padding:0.6rem;
+  border-radius:6px;
+  border:1px solid #efe7e0;
+  background: #fff;
+}
+#quiz legend{ font-weight:600; margin-bottom:0.5rem; }
+#quiz label{ display:block; margin:0.35rem 0; cursor:pointer; }
+#quiz input[type="radio"]{ margin-right:0.5rem; }
+
+.quiz-actions{
+  display:flex;
+  gap:0.5rem;
+  margin-top:0.5rem;
+}
+button{
+  background:var(--brand-orange);
+  color:white;
+  border:0;
+  padding:0.6rem 0.9rem;
+  border-radius:6px;
+  cursor:pointer;
+  font-weight:600;
+}
+button#reset-btn{
+  background:#eee;
+  color:var(--dark);
+}
+
+/* Results area */
+#results{
+  margin-top:0.9rem;
+  padding:0.75rem;
+  border-radius:8px;
+  background:#fff;
+  border:1px dashed rgba(0,0,0,0.06);
+}
+
+/* Footer */
+footer{
+  margin:1.25rem 0 2rem;
+  color:var(--muted);
+  font-size:0.9rem;
+}
+
+/* Small screens: stack hero content */
+@media (max-width:700px){
+  .hero-content{ flex-direction:column; align-items:flex-start; gap:0.5rem; }
+  .hero-art img{ max-width:140px; }
+  .glossary{ grid-template-columns:1fr; }
+}
+
+/* Provide clear success / error states for answers */
+.answer-correct{ border-color: #b7e4c7; background: linear-gradient(0deg, rgba(183,228,199,0.12), rgba(183,228,199,0.02)); }
+.answer-wrong{ border-color: #ffd6d6; background: linear-gradient(0deg, rgba(255,214,214,0.08), rgba(255,214,214,0.02)); }
